@@ -4,17 +4,19 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';  // Import toast
 
+const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
+
 export default function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/students')
+    axios.get(`${apiUrl}/students`)
       .then(res => setStudents(res.data))
       .catch(err => toast.error('Failed to fetch students.'));
   }, []);
 
   const deleteStudent = (id) => {
-    axios.delete(`http://localhost:5000/students/${id}`)
+    axios.delete(`${apiUrl}/students/${id}`)
       .then(() => {
         setStudents(students.filter(s => s._id !== id));
         toast.success('Student deleted successfully');
