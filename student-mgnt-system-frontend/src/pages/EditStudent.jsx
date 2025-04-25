@@ -4,20 +4,22 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';  // Import toast
 
+const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
+
 export default function EditStudent() {
   const { id } = useParams();
   const [form, setForm] = useState({ studentId: '', firstName: '', lastName: '', email: '', dob: '', department: '', enrollmentYear: '', isActive: true });
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/students/${id}`)
+    axios.get(`${apiUrl}/students/${id}`)
       .then(res => setForm(res.data))
       .catch(() => toast.error('Failed to fetch student data.'));
   }, [id]);
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.put(`http://localhost:5000/students/${id}`, form)
+    axios.put(`${apiUrl}/students/${id}`, form)
       .then(() => {
         toast.success('Student updated successfully!');
         navigate('/students');
