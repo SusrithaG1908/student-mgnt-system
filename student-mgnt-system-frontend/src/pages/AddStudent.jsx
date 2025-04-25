@@ -16,10 +16,11 @@ export default function AddStudent() {
     isActive: true
   });
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('http://localhost:5000/students', form)
+    axios.post(`${apiUrl}/students`, form)
       .then(() => {
         toast.success('Student added successfully!');
         navigate('/students');
