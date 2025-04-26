@@ -46,7 +46,7 @@ export default function AddStudent() {
           Active:
           <input type="checkbox" checked={form.isActive} onChange={e => setForm({ ...form, isActive: e.target.checked })} />
         </label>
-        <button type="submit">Add</button>
+        <button type="submit" style={styles.addButton}>Add</button>
       </div>
     </form>
   );
@@ -56,5 +56,14 @@ const styles = {
   content: {
     padding: '2rem',       // adds space around your content
     paddingTop: '1rem',     // little extra margin below navbar
+  },
+  addButton: {
+    marginRight: '10px',
+    padding: '5px 10px',
+    backgroundColor: '#4CAF50',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
   },
 };
