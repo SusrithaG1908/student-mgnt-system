@@ -6,7 +6,12 @@ export default function Home() {
   return (
     <div>
       <h1>Student Management System</h1>
-      <Link to="/students">View Students</Link>
+      <div>
+        <Link to="/students">View Students</Link>
+      </div>
+      <div>
+        <Link to="/add">Add Students</Link>
+      </div>
     </div>
   );
 }

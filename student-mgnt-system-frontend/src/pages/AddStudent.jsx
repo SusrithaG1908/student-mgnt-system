@@ -1,5 +1,6 @@
 // src/pages/AddStudent.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';  // Import toast
@@ -30,7 +31,10 @@ export default function AddStudent() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add Student</h2>
+      <h2>Student Management System</h2>
+      <div>
+        <h3>Add Student | <Link to="/">Home</Link></h3>
+      </div>
       <input placeholder="Student ID" onChange={e => setForm({ ...form, studentId: e.target.value })} />
       <input placeholder="First Name" onChange={e => setForm({ ...form, firstName: e.target.value })} />
       <input placeholder="Last Name" onChange={e => setForm({ ...form, lastName: e.target.value })} />

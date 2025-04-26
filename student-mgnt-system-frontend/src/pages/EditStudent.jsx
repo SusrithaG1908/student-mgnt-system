@@ -1,5 +1,6 @@
 // src/pages/EditStudent.jsx
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';  // Import toast
@@ -29,7 +30,10 @@ export default function EditStudent() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Edit Student</h2>
+      <h2>Student Management System</h2>
+      <div>
+        <h3>Edit Student | <Link to="/">Home</Link></h3>
+      </div>
       <input value={form.studentId} onChange={e => setForm({ ...form, studentId: e.target.value })} />
       <input value={form.firstName} onChange={e => setForm({ ...form, firstName: e.target.value })} />
       <input value={form.lastName} onChange={e => setForm({ ...form, lastName: e.target.value })} />

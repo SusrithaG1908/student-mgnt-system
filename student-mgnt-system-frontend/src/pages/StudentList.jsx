@@ -26,8 +26,13 @@ export default function StudentList() {
 
   return (
     <div>
-      <h2>All Students</h2>
-      <Link to="/add">Add New Student</Link>
+      <h2>Student Management System</h2>
+      <div>
+        <h3><Link to="/add">Add New Student</Link> | <Link to="/">Home</Link></h3>
+      </div>
+      <div>
+        <h3>Students List</h3>
+      </div>      
       <table border="1">
         <thead>
           <tr>
