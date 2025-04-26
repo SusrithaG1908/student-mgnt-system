@@ -27,7 +27,7 @@ export default function StudentList() {
   return (
     <div style={styles.content}>
       <div>
-        <h3><Link to="/add">Add New Student</Link> | <Link to="/">Home</Link></h3>
+        <Link to="/add">Add New Student</Link> | <Link to="/">Back to Home</Link>
       </div>
       <div>
         <h3>Students List</h3>

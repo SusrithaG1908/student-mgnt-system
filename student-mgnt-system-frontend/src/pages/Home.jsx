@@ -8,7 +8,7 @@ export default function Home() {
       <div style={styles.content}>
         <Link to="/students">View Students</Link><br></br>
         <br></br>
-        <Link to="/add">Add Students</Link>
+        <Link to="/add">Add New Student</Link>
       </div>
     </div>  
   );  
