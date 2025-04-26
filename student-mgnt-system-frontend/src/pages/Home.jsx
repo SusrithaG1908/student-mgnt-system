@@ -3,15 +3,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-  return (
+  return (    
     <div>
-      <h1>Student Management System</h1>
-      <div>
-        <Link to="/students">View Students</Link>
-      </div>
-      <div>
+      <div style={styles.content}>
+        <Link to="/students">View Students</Link><br></br>
+        <br></br>
         <Link to="/add">Add Students</Link>
       </div>
-    </div>
-  );
+    </div>  
+  );  
 }
+
+const styles = {
+  content: {
+    padding: '2rem',       // adds space around your content
+    paddingTop: '1rem',     // little extra margin below navbar
+  },
+};

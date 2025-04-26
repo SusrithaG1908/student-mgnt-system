@@ -31,22 +31,30 @@ export default function AddStudent() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Student Management System</h2>
-      <div>
-        <h3>Add Student | <Link to="/">Home</Link></h3>
+      <div style={styles.content}>
+        <div>
+          <h3>Add Student | <Link to="/">Home</Link></h3>
+        </div>
+        <input placeholder="Student ID" onChange={e => setForm({ ...form, studentId: e.target.value })} />
+        <input placeholder="First Name" onChange={e => setForm({ ...form, firstName: e.target.value })} />
+        <input placeholder="Last Name" onChange={e => setForm({ ...form, lastName: e.target.value })} />
+        <input placeholder="Email" onChange={e => setForm({ ...form, email: e.target.value })} />
+        <input type="date" onChange={e => setForm({ ...form, dob: e.target.value })} />
+        <input placeholder="Department" onChange={e => setForm({ ...form, department: e.target.value })} />
+        <input type="number" placeholder="Enrollment Year" onChange={e => setForm({ ...form, enrollmentYear: e.target.value })} />
+        <label>
+          Active:
+          <input type="checkbox" checked={form.isActive} onChange={e => setForm({ ...form, isActive: e.target.checked })} />
+        </label>
+        <button type="submit">Add</button>
       </div>
-      <input placeholder="Student ID" onChange={e => setForm({ ...form, studentId: e.target.value })} />
-      <input placeholder="First Name" onChange={e => setForm({ ...form, firstName: e.target.value })} />
-      <input placeholder="Last Name" onChange={e => setForm({ ...form, lastName: e.target.value })} />
-      <input placeholder="Email" onChange={e => setForm({ ...form, email: e.target.value })} />
-      <input type="date" onChange={e => setForm({ ...form, dob: e.target.value })} />
-      <input placeholder="Department" onChange={e => setForm({ ...form, department: e.target.value })} />
-      <input type="number" placeholder="Enrollment Year" onChange={e => setForm({ ...form, enrollmentYear: e.target.value })} />
-      <label>
-        Active:
-        <input type="checkbox" checked={form.isActive} onChange={e => setForm({ ...form, isActive: e.target.checked })} />
-      </label>
-      <button type="submit">Add</button>
     </form>
   );
 }
+
+const styles = {
+  content: {
+    padding: '2rem',       // adds space around your content
+    paddingTop: '1rem',     // little extra margin below navbar
+  },
+};

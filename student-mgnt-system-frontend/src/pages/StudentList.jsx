@@ -25,8 +25,7 @@ export default function StudentList() {
   };
 
   return (
-    <div>
-      <h2>Student Management System</h2>
+    <div style={styles.content}>
       <div>
         <h3><Link to="/add">Add New Student</Link> | <Link to="/">Home</Link></h3>
       </div>
@@ -69,3 +68,10 @@ export default function StudentList() {
     </div>
   );
 }
+
+const styles = {
+  content: {
+    padding: '2rem',       // adds space around your content
+    paddingTop: '1rem',     // little extra margin below navbar
+  },
+};
